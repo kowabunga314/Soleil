@@ -1,0 +1,12 @@
+{
+  "sensors": {
+    "MPU_6050": {
+      "offset_XAccel": [733, 734],
+      "offset_YAccel": [-292, -292],
+      "offset_ZAccel": [1269, 1270],
+      "offset_XGyro": [57, 58],
+      "offset_YGyro": [-7, -6],
+      "offset_ZGyro": [20, 21]
+    }
+  }
+}
