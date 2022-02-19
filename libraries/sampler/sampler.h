@@ -2,18 +2,20 @@
 #ifndef SAMPLER_H
 #define SAMPLER_H
 
-#define BAUD_RATE = 115200
+#endif
 
+
+const uint32_t BAUD_RATE = 115200;
 
 class Sampler {
 
-    uint frequency, period, lastMicros;
+    uint32_t frequency, period, lastMicros;
 
     public:
-        void initialize(uint)
-        void takeSample();
+        void initialize(uint32_t);
+        uint32_t takeSample();
     
     private:
         void setupSerial();
 
-}
+};

@@ -1,36 +1,42 @@
 
+#include <Arduino.h>
 #include "sampler.h"
 
 
+void Sampler::initialize (uint32_t sampleRate) {
 
-Sampler::Sampler() {
-    ;
-}
+    // Initialize Serial stream
+    Sampler::setupSerial();
 
-Sampler::initialize (uint sampleRate) {
+    // Set class properties
     frequency = sampleRate;
-    interval = 1000 - frequency;
+    period = 1000 / frequency;
+    Serial.print("Sampling at frequency: ");
+    Serial.print(frequency);
+    Serial.println("Hz.");
+    Serial.print("Sampling interval: ");
+    Serial.print(period);
+    Serial.println(" milliseconds per sample.");
 }
 
-Sampler::takeSample () {
+uint32_t Sampler::takeSample () {
 
     // Wait until we can perform the next sample
-    while (micros() - lastMicros < interval);
+    while (micros() - Sampler::lastMicros < period);
 
     // update lastMicros immediately
-    lastMicros = micros();
+    Sampler::lastMicros = micros();
 
     // Let monitor know sample was taken
-    Serial.print('Took sample at ');
-    Serial.println(lastMicros);
+    return Sampler::lastMicros;
 
 }
 
 // Set up Serial connection
-Sampler::setupSerial() {
+void Sampler::setupSerial() {
 
     // Initialize serial communication
-    Serial.begin(BAUD_RATE);
+    Serial.begin(115200);
     // Wait for Serial to start
     while (!Serial);
 

@@ -1,25 +1,21 @@
 
-#import "sensor.h"
+#include "sensor.h"
 
 
-// Set sampling rate in Hz
-#define samplingFrequency 5
+class MPU6050: public Sensor {
 
+    int pollingPeriod;
 
-public class MPU6050(Sensor) {
-
-    public int pollingPeriod;
-
-    public void initialize() {
-        pollingPeriod = 1000/samplingFrequency;
+    void initialize() {
+        ;
     }
 
-    public void sampleCallback() {
-        return 1;
+    void sampleCallback() {
+        ;
     }
 
-    private void selfTest() {
-        return 1;
+    void selfTest() {
+        ;
     }
 
-}
+};
