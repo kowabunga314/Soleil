@@ -3,10 +3,10 @@
 class Sensor {
 
     public:
-        void initialize();
-        void sampleCallback();
+        // void initialize();
+        // void sampleCallback();
 
     private:
-        void selfTest();
+        // void selfTest();
 
 };

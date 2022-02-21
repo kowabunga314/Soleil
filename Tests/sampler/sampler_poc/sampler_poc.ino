@@ -1,17 +1,17 @@
 
-#define INTERVAL 5000 // 5 milliseconds per sample for 200 Hz, change this for different sampling rates.
+//#define INTERVAL 5000 // 5 milliseconds per sample for 200 Hz, change this for different sampling rates.
 // #define INTERVAL 10000
 // #define INTERVAL 500
-// #define INTERVAL 1000000
+ #define INTERVAL 1000000
 
 
-unint32_t lastMicros = 0;
+uint32_t lastMicros = 0;
 
 
 void setup() {
     setupSerial();
     Serial.println("Beginning initialization routine...");
-    sampler.initialize(1);
+    // sampler.initialize(1);
     Serial.println("Initialization complete.");
 }
 

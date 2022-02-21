@@ -4,15 +4,18 @@
 
 #endif
 
+#include "sensor.h"
 
-const uint32_t BAUD_RATE = 115200;
+
+static const uint32_t BAUD_RATE = 115200;
 
 class Sampler {
 
-    uint32_t frequency, period, lastMicros;
+    uint32_t sensorCount, frequency, period, lastMicros;
+    Sensor *sensors;
 
     public:
-        void initialize(uint32_t);
+        void initialize(Sensor[], uint32_t, uint32_t);
         uint32_t takeSample();
     
     private:
