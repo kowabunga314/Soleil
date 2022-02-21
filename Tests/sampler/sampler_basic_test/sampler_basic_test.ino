@@ -4,7 +4,6 @@
 
 uint32_t sampleRate = 2;
 Sampler sampler;
-//Sensor sensors[0];
 uint32_t lastMicros;
 
 void setup() {

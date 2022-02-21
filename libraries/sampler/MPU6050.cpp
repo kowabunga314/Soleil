@@ -4,18 +4,16 @@
 
 class MPU6050: public Sensor {
 
-    int pollingPeriod;
+  void initialize() {
+    ;
+  }
 
-    void initialize() {
-        ;
-    }
+  void readSensor() {
+    ;
+  }
 
-    void sampleCallback() {
-        ;
-    }
-
-    void selfTest() {
-        ;
-    }
+  void selfTest() {
+    ;
+  }
 
 };

@@ -4,20 +4,20 @@
 
 #endif
 
-#include "sensor.h"
+#include "GenericSensor.h"
 
 
 static const uint32_t BAUD_RATE = 115200;
 static const uint32_t defaultSensorCount = 0, defaultSampleRate = 1;
-static Sensor defaultSensors[defaultSensorCount];
+static GenericSensor defaultSensors[defaultSensorCount];
 
 class Sampler {
 
     uint32_t sensorCount, frequency, period, lastMicros;
-    Sensor *sensors;
+    GenericSensor *sensors;
 
     public:
-        Sampler(uint32_t, uint32_t, Sensor[]);
+        Sampler(uint32_t, uint32_t, GenericSensor[]);
         Sampler(uint32_t);
         Sampler();
         void initialize();

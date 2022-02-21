@@ -12,7 +12,7 @@
  *                periodically based on the sampleRate.
  * @param sensorArrayLength the length of the sensors array.
  */
-Sampler::Sampler (uint32_t sampleRate, uint32_t sensorArrayLength, Sensor newSensors[]) {
+Sampler::Sampler (uint32_t sampleRate, uint32_t sensorArrayLength, GenericSensor newSensors[]) {
   sensors = newSensors;
   sensorCount = sensorArrayLength;
   frequency = sampleRate;

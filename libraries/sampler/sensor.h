@@ -2,11 +2,11 @@
 
 class Sensor {
 
-    public:
-        // void initialize();
-        // void sampleCallback();
+  public:
+    virtual void initialize() = 0;
+    virtual void readSensor() = 0;
 
-    private:
-        // void selfTest();
+  private:
+    void selfTest();
 
 };
