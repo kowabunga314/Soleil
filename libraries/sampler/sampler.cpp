@@ -1,50 +1,59 @@
 
 #include <Arduino.h>
 #include "sampler.h"
-// #include "sensor.h"
 
+
+
+/*
+ * Constructor for Sampler class
+ *  
+ * @param sampleRate frequency with which samples are to be taken.
+ * @param sensors an array of Sensor objects that are sampled
+ *                periodically based on the sampleRate.
+ * @param sensorArrayLength the length of the sensors array.
+ */
+Sampler::Sampler (uint32_t sampleRate, uint32_t sensorArrayLength, Sensor newSensors[]) {
+  sensors = newSensors;
+  sensorCount = sensorArrayLength;
+  frequency = sampleRate;
+}
 
 /*
  * Constructor for Sampler class with no sensors
  *  
  * @param sampleRate frequency with which samples are to be taken.
  */
-// Sampler::Sampler(uint32_t sampleRate) {
+Sampler::Sampler (uint32_t sampleRate) {
 
-//   // Initialize Serial stream
-//   setupSerial();
+  // Set frequency to given sampleRate
+  frequency = sampleRate;
 
-//   Serial.print("sampleRate: ");
-//   Serial.println(sampleRate);
-
-//   frequency = 2;
-// }
+  // Initialize Sampler using default values
+  sensors = defaultSensors;
+  sensorCount = defaultSensorCount;
+}
 
 /*
- * Constructor for Sampler class
+ * Constructor for Sampler class with no sensors
  *  
- * @param sensors an array of Sensor objects that are sampled
- *                periodically based on the sampleRate.
- * @param sensorArrayLength the length of the sensors array.
  * @param sampleRate frequency with which samples are to be taken.
  */
-// Sampler::Sampler(Sensor newSensors[], uint32_t sensorArrayLength, uint32_t sampleRate) {
-//   sensors = newSensors;
-//   sensorCount = sensorArrayLength;
-//   frequency = sampleRate;
-// }
+Sampler::Sampler () {
 
-void Sampler::initialize (Sensor newSensors[], uint32_t sensorArrayLength, uint32_t sampleRate) {
+  // Initialize Sampler using default values
+  sensors = defaultSensors;
+  sensorCount = defaultSensorCount;
+  frequency = defaultSampleRate;
+}
 
-    sensors = newSensors;
-    sensorCount = sensorArrayLength;
-    frequency = sampleRate;
+void Sampler::initialize () {
 
     // Initialize Serial stream
     Sampler::setupSerial();
 
     // Set class properties
     period = 1000000 / frequency;
+
     Serial.print("Sampling at frequency: ");
     Serial.print(frequency);
     Serial.println("Hz.");

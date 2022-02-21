@@ -2,16 +2,16 @@
 #include "sampler.h"
 
 
-//Sampler sampler;
-uint32_t sampleRate = 5;
+uint32_t sampleRate = 2;
 Sampler sampler;
-Sensor sensors[0];
+//Sensor sensors[0];
 uint32_t lastMicros;
 
 void setup() {
     setupSerial();
     Serial.println("Beginning initialization routine...");
-    sampler.initialize(sensors, 0, sampleRate);
+    sampler = Sampler(sampleRate);
+    sampler.initialize();
     Serial.println("Initialization complete.");
 }
 

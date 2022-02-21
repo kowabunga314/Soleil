@@ -8,6 +8,8 @@
 
 
 static const uint32_t BAUD_RATE = 115200;
+static const uint32_t defaultSensorCount = 0, defaultSampleRate = 1;
+static Sensor defaultSensors[defaultSensorCount];
 
 class Sampler {
 
@@ -15,7 +17,10 @@ class Sampler {
     Sensor *sensors;
 
     public:
-        void initialize(Sensor[], uint32_t, uint32_t);
+        Sampler(uint32_t, uint32_t, Sensor[]);
+        Sampler(uint32_t);
+        Sampler();
+        void initialize();
         uint32_t takeSample();
     
     private:
