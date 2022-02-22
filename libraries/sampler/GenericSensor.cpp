@@ -6,7 +6,7 @@ void GenericSensor::initialize() {
   ;
 }
 
-void GenericSensor::readSensor() {
+double* GenericSensor::readSensor() {
   ;
 }
 

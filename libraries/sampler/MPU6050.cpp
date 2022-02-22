@@ -1,14 +1,14 @@
 
-#include "sensor.h"
+#include "PhysicalSensor.h"
 
 
-class MPU6050: public Sensor {
+class MPU6050: public PhysicalSensor {
 
   void initialize() {
     ;
   }
 
-  void readSensor() {
+  double* readSensor() {
     ;
   }
 

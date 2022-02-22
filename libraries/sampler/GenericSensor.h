@@ -6,7 +6,7 @@ class GenericSensor: public Sensor {
 
   public:
     void initialize();
-    void readSensor();
+    double* readSensor();
 
   private:
     void selfTest();

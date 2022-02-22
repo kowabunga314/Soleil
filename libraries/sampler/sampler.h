@@ -4,12 +4,12 @@
 
 #endif
 
-#include "GenericSensor.h"
+#include "PhysicalSensor.h"
 
 
 static const uint32_t BAUD_RATE = 115200;
 static const uint32_t defaultSensorCount = 0, defaultSampleRate = 1;
-static GenericSensor defaultSensors[defaultSensorCount];
+static PhysicalSensor defaultSensors[defaultSensorCount];
 
 class Sampler {
 

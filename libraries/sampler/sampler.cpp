@@ -35,8 +35,6 @@ Sampler::Sampler (uint32_t sampleRate) {
 
 /*
  * Constructor for Sampler class with no sensors
- *  
- * @param sampleRate frequency with which samples are to be taken.
  */
 Sampler::Sampler () {
 
