@@ -1,4 +1,4 @@
-const int buzzer = 8; //buzzer to arduino pin 9
+const int buzzer = 8; //buzzer to arduino pin 8
 
 // Buzzer frequencies in Hz
 const int B_FREQ = 1000;
