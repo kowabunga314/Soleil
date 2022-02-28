@@ -3,21 +3,6 @@
 #include "sampler.h"
 
 
-
-/*
- * Constructor for Sampler class
- *  
- * @param sampleRate frequency with which samples are to be taken.
- * @param sensors an array of Sensor objects that are sampled
- *                periodically based on the sampleRate.
- * @param sensorArrayLength the length of the sensors array.
- */
-Sampler::Sampler (uint32_t sampleRate, uint32_t sensorArrayLength, GenericSensor newSensors[]) {
-  sensors = newSensors;
-  sensorCount = sensorArrayLength;
-  frequency = sampleRate;
-}
-
 /*
  * Constructor for Sampler class with no sensors
  *  
@@ -29,7 +14,6 @@ Sampler::Sampler (uint32_t sampleRate) {
   frequency = sampleRate;
 
   // Initialize Sampler using default values
-  sensors = defaultSensors;
   sensorCount = defaultSensorCount;
 }
 
@@ -39,7 +23,6 @@ Sampler::Sampler (uint32_t sampleRate) {
 Sampler::Sampler () {
 
   // Initialize Sampler using default values
-  sensors = defaultSensors;
   sensorCount = defaultSensorCount;
   frequency = defaultSampleRate;
 }

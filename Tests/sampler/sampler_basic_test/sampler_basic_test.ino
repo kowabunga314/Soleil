@@ -10,6 +10,7 @@ void setup() {
     setupSerial();
     Serial.println("Beginning initialization routine...");
     sampler = Sampler(sampleRate);
+    
     sampler.initialize();
     Serial.println("Initialization complete.");
 }
@@ -17,8 +18,10 @@ void setup() {
 void loop () {
     // Serial.println("Sampling sensors...");
     lastMicros = sampler.takeSample();
-     Serial.print("Took sample at ");
-     Serial.println(lastMicros);
+
+    Serial.print("A sample was taken at ");
+    Serial.print(lastMicros);
+    Serial.println(" us.");
 }
 
 // Set up Serial connection`
