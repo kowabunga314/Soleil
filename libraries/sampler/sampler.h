@@ -18,7 +18,7 @@ class Sampler {
         Sampler(uint32_t);
         Sampler();
         void initialize();
-        uint32_t takeSample();
+        BarometerData takeSample();
     
     private:
         void setupSerial();

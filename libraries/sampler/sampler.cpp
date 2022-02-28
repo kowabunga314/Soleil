@@ -70,7 +70,7 @@ void Sampler::initialize () {
     this->sensor.altimeterSetup();
 }
 
-uint32_t Sampler::takeSample () {
+BarometerData Sampler::takeSample () {
 
     // Wait until we can perform the next sample
     while (micros() - Sampler::lastMicros < period);
@@ -85,7 +85,7 @@ uint32_t Sampler::takeSample () {
     BarometerData bd = this->sensor.altimeterLoop();
 
     // Let monitor know sample was taken
-    return lastMicros;
+    return bd;
 
 }
 

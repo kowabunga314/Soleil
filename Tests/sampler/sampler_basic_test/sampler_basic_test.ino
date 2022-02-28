@@ -4,9 +4,9 @@
 #include <stdint.h>
 
 
-uint32_t sampleRate = 2;
+uint32_t sampleRate = 1;
 Sampler sampler;
-uint32_t lastMicros;
+BarometerData bd;
 
 void setup() {
     setupSerial();
@@ -19,11 +19,21 @@ void setup() {
 
 void loop () {
     // Serial.println("Sampling sensors...");
-    lastMicros = sampler.takeSample();
+    bd = sampler.takeSample();
 
     Serial.print("A sample was taken at ");
-    Serial.print(lastMicros);
+    Serial.print(bd.timestamp);
     Serial.println(" us.");
+    Serial.print("Barometer pressure reading: ");
+    Serial.print(bd.pressure);
+    Serial.println(" (pressure units).");
+    Serial.print("Barometer temperature reading: ");
+    Serial.print(bd.temperature);
+    Serial.println(" degrees C.");
+    Serial.print("Barometer altitude reading: ");
+    Serial.print(bd.altitude);
+    Serial.println(" meters.");
+    Serial.println();
 }
 
 // Set up Serial connection`

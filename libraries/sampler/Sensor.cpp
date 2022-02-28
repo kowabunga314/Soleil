@@ -55,11 +55,11 @@ BarometerData Sensor::altimeterLoop() {
     this->bd.altitude = barometer.getAltitude(this->bd.pressure);
 
     // display measured values if appropriate
-    Serial.print("T/P/A\t");
-    Serial.print(this->bd.temperature); Serial.print("\t");
-    Serial.print(this->bd.pressure); Serial.print("\t");
-    Serial.print(this->bd.altitude);
-    Serial.println("");
+    // Serial.print("T/P/A\t");
+    // Serial.print(this->bd.temperature); Serial.print("\t");
+    // Serial.print(this->bd.pressure); Serial.print("\t");
+    // Serial.print(this->bd.altitude);
+    // Serial.println("");
     
     return bd;
 }
