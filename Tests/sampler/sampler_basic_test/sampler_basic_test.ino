@@ -1,5 +1,7 @@
 
 #include "sampler.h"
+#include "Sensor.h"
+#include <stdint.h>
 
 
 uint32_t sampleRate = 2;
